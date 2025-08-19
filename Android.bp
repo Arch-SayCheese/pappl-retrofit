@@ -1,0 +1,32 @@
+package {
+    default_applicable_licenses: ["Android-Apache-2.0"],
+}
+
+cc_library_shared {
+    name: "pappl-retrofit",
+    srcs: [
+        "pappl-retrofit/pappl-retrofit.c",
+        "pappl-retrofit/print-job.c",
+        "pappl-retrofit/cups-backends.c",
+        "pappl-retrofit/cups-side-back-channel.c",
+        "pappl-retrofit/web-interface.c",
+    ],
+    export_include_dirs: [ "pappl-retrofit", "." ],
+    local_include_dirs: [ "config" ],
+    required: [
+        "Fuji_Xerox-DocuPrint_CM305_df-PDF.ppd",
+        "Generic-PDF_Printer-PDF.ppd",
+        "HP-Color_LaserJet_CM3530_MFP-PDF.ppd",
+        "pxlcolor.ppd",
+        "pxlmono.ppd",
+        "Ricoh-PDF_Printer-PDF.ppd",
+        "testpage.pdf",
+    ],
+    shared_libs: [ "pappl", "libcups", "libcupsfilters", "libppd" ],
+}
+
+prebuilt_etc {
+    name: "testpage.pdf",
+    src: "data/testpage.pdf",
+    filename: "testpage.pdf",
+}
