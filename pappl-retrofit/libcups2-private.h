@@ -59,13 +59,6 @@
 
 //   Data type newly introduced in libcups3
 
-enum http_resolve_e			// @link httpResolveURI@ options bit values
-{
-  HTTP_RESOLVE_DEFAULT = 0,		// Resolve with default options
-  HTTP_RESOLVE_FQDN = 1,		// Resolve to a FQDN
-  HTTP_RESOLVE_FAXOUT = 2		// Resolve FaxOut service instead of Print
-};
-typedef unsigned http_resolve_t;	// @link httpResolveURI@ options bitfield
 
 #  else
 
